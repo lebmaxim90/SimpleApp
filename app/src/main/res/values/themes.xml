@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Базовая тема приложения -->
+    <style name="Theme.SimpleApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Основные цвета -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Цвет фона -->
+        <item name="android:windowBackground">@color/background</item>
+
+        <!-- Цвета статус-бара и навигации -->
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:navigationBarColor">@color/background</item>
+
+        <!-- Анимации -->
+        <item name="android:windowAnimationStyle">@style/Animation.App</item>
+    </style>
+
+    <!-- Стиль для кнопок -->
+    <style name="RoundedButton" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/RoundedShape</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">@dimen/spacing_small</item>
+    </style>
+
+    <!-- Скруглённая форма -->
+    <style name="RoundedShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/radius_medium</item>
+    </style>
+
+    <!-- Анимации переходов -->
+    <style name="Animation.App" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_out_right</item>
+    </style>
+</resources>
