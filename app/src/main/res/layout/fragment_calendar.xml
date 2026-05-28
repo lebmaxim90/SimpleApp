@@ -4,57 +4,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="8dp">
 
-    <!-- Выбранная дата (кликабельная) -->
-    <TextView
-        android:id="@+id/selectedDateText"
+    <!-- Заголовок с месяцем и годом + навигация -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="📅 Выберите дату"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="12dp"
-        android:background="@drawable/date_background"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_marginBottom="16dp"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
-    <!-- Поле ввода события -->
-    <com.google.android.material.textfield.TextInputLayout
+        <ImageButton
+            android:id="@+id/prevMonthBtn"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
+
+        <TextView
+            android:id="@+id/monthYearText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Май 2026"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/nextMonthBtn"
+            android:src="@android:drawable/ic_media_next"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="48dp"
+            android:layout_height="48dp"/>
+    </LinearLayout>
+
+    <!-- Сетка календаря (дни недели) -->
+    <GridLayout
+        android:id="@+id/weekdayHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Название события"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        android:rowCount="1"
+        android:columnCount="7"
+        android:layout_marginTop="16dp">
+        <!-- Заполняется программно -->
+    </GridLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/eventTitleInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Кнопка добавления -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/addEventButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="➕ Добавить событие"
-        android:layout_marginTop="16dp"/>
-
-    <!-- Список событий -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="📝 События на выбранную дату:"
-        android:textStyle="bold"
-        android:layout_marginTop="24dp"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/eventsList"
+    <!-- Сетка календаря (числа месяца) -->
+    <GridLayout
+        android:id="@+id/calendarGrid"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:rowCount="6"
+        android:columnCount="7"
+        android:layout_marginTop="8dp">
+        <!-- Заполняется программно -->
+    </GridLayout>
+
+    <!-- Список медиа для выбранной даты -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📁 Медиа на выбранную дату:"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mediaList"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_marginTop="8dp"/>
 
 </LinearLayout>

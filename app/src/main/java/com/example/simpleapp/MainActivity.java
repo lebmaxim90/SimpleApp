@@ -22,9 +22,12 @@ public class MainActivity extends AppCompatActivity {
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
                     switch (position) {
-                        case 0: tab.setText("📅 Календарь"); break;
-                        case 1: tab.setText("🖼️ Фото"); break;
-                        case 2: tab.setText("🎬 Видео"); break;
+                        case 0:
+                            tab.setText("📅 Календарь");
+                            break;
+                        case 1:
+                            tab.setText("📱 Галерея");
+                            break;
                     }
                 }).attach();
     }

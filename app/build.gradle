@@ -32,13 +32,22 @@ dependencies {
     implementation 'com.google.android.material:material:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    // ViewPager2 и RecyclerView (совместимые версии)
+    implementation 'androidx.viewpager2:viewpager2:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // Glide для загрузки изображений
     implementation 'com.github.bumptech.glide:glide:4.16.0'
-    implementation 'androidx.media3:media3-exoplayer:1.3.1'
-    implementation 'androidx.media3:media3-ui:1.3.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // Gson для сохранения данных
     implementation 'com.google.code.gson:gson:2.10.1'
-    implementation libs.firebase.crashlytics.buildtools
+
+    // Core KTX (для совместимости)
+    implementation 'androidx.core:core-ktx:1.13.1'
 }
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)

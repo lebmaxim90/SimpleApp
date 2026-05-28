@@ -15,15 +15,17 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position) {
-            case 0: return new CalendarFragment();
-            case 1: return new PhotosFragment();
-            case 2: return new VideosFragment();
-            default: return new CalendarFragment();
+            case 0:
+                return new CalendarFragment();  // Календарь
+            case 1:
+                return new GalleryFragment();   //Галерея (ручное добавление)
+            default:
+                return new CalendarFragment();
         }
     }
 
     @Override
     public int getItemCount() {
-        return 3; // Три вкладки
+        return 2; // число вкладок
     }
 }
