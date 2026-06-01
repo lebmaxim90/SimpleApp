@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 (tab, position) -> {
                     switch (position) {
                         case 0:
-                            tab.setText("📅 Календарь");
+                            tab.setText("Календарь");
                             break;
                         case 1:
-                            tab.setText("📱 Галерея");
+                            tab.setText("Галерея");
                             break;
                     }
                 }).attach();

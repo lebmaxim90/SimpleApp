@@ -39,6 +39,43 @@
             android:layout_height="48dp"/>
     </LinearLayout>
 
+    <!-- Рамка календаря -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:background="@drawable/rounded_card">   <!-- рамка -->
+
+            <!-- Дни недели -->
+            <GridLayout
+                android:id="@+id/weekdayHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="1"
+                android:columnCount="7"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Сетка календаря -->
+            <GridLayout
+                android:id="@+id/calendarGrid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="6"
+                android:columnCount="7" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
     <!-- Сетка календаря (дни недели) -->
     <GridLayout
         android:id="@+id/weekdayHeader"
