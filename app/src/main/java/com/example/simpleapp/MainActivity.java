@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,6 +13,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Получаем высоту статус-бара
+        int statusBarHeight = getStatusBarHeight();
+
+        // Применяем отступ к корневому контейнеру
+        View rootView = findViewById(R.id.root_layout); // дайте ID корневому элементу
+        rootView.setPadding(0, statusBarHeight, 0, 0);
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager = findViewById(R.id.viewPager);
@@ -30,5 +38,14 @@ public class MainActivity extends AppCompatActivity {
                             break;
                     }
                 }).attach();
+    }
+
+    private int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
 }
