@@ -3,11 +3,11 @@ package com.example.simpleapp;
 import android.net.Uri;
 
 public class MediaItem {
-    private String filePath;      // Путь к файлу
-    private String fileName;      // Имя файла
-    private String dateCreated;   // Дата создания (dd.MM.yyyy)
-    private String mediaType;     // "photo" или "video"
-    private Uri contentUri;       // URI для отображения
+    private String filePath;
+    private String fileName;
+    private String dateCreated;
+    private String mediaType;
+    private Uri contentUri;
 
     public MediaItem(String filePath, String fileName, String dateCreated, String mediaType, Uri contentUri) {
         this.filePath = filePath;
